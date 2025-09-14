@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #F4F6F7;
+            color: #2C3E50;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        #h1-paragraph {
+            font-weight: lighter;
+            margin-bottom: 200px;
+        }
+
+        #image {
+            height: 300px;
+            width: 300px;
+        }
+
+        #eM-image {
+            height: 250px;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+        #mission-statement {
+            color: #3498DB;
+            font-weight: lighter;
+            font-size: 32px;
+        }
+
+        #ms-Container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            margin-bottom: 200px;
+        }
+
+        #upcoming-events {
+            background-color: #fad1d1;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .outdoor {
+            background-color: #D6EAF8;
+            padding: 5px;
+            border: 1px solid #AED6F1;
+        }
+
+        #contact-us {
+            color: #3498DB;
+            font-weight: lighter;
+        }
+
+        .contactUs-DivSection {
+            padding: 10px;
+            background-color: #F4F6F7;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/Sunnydale-School-Logo.png" alt="Sunnydale School" id="image">
+    <h1>Sunnydale Elementary School</h1>
+    <p id="h1-paragraph">Welcome to our school information hub for students, parents, and staff! We're glad you're here. <br>This is your go-to place for all the latest updates, helpful resources, and important school news.</p>
+
+    <h2 id="mission-statement">Mission Statement</h2>
+    <div id="ms-Container">
+    <p>
+        Our vision is to enable students to become resourceful, respectful, and responsible citizens who actively engage with their communities and the wider world. We offer a high-quality, inclusive education that promotes lifelong learning and an appreciation of knowledge. With the support of a nurturing environment, we promote creativity, critical thinking, and collaboration, enabling every student to realize their full potential. We are dedicated to fostering empathy, strength of character, and resilience, equipping our students for both academic achievement and for rich, contributory, and productive lives in a diverse, dynamic, and changing world.
+    </p>
+
+    <img src="images/EM-Students.jpg" alt="Elementary Students" id="eM-image">
+    </div>
+
+    <h2 id="upcoming-events">Upcoming Events</h2>
+    <ul>
+        <li data-event-type="indoor" title="Event Type: Indoor">Back-to-School Night - <span style="font-weight: bold; color: #ffb3b3">Monday, 6:00 PM</span></li>
+        <li class="outdoor" data-event-type="outdoor" title="Event Type: Outdoor">Sports Day - <span style="font-weight: bold; color: #ffb3b3">June 20</span></li>
+        <li data-event-type="indoor" title="Event Type: Indoor">Chess Tournament - <span style="font-weight: bold; color: #ffb3b3">August 04</span></li>
+    </ul>
+
+    <div class="contactUs-DivSection">
+        <h2 id="contact-us">Contact Us</h2>
+
+        <p><strong>Address:</strong> 123 Learning Lane, Hometown, ST 16745</p>
+        <p id="phoneCopy"><strong>Phone:</strong><abbr title="Click to copy Phone Number">(123) 456-7890</abbr></p>
+        <p id="emailCopy"><strong>Email:</strong><abbr title="Click to copy Email">info@sunnydalelementary.edu</abbr></p>
+        <!--Imagine clicking here shows a message: ‘Thanks for reaching out!-->
+    </div>
+
+    <script>
+       const emailPara = document.getElementById('emailCopy');
+        const phonePara = document.getElementById('phoneCopy');
+
+        emailPara.addEventListener('click', function() {
+            navigator.clipboard.writeText('info@sunnydalelementary.edu')
+            .then(() => alert('Email copied!'));
+        });
+
+        phonePara.addEventListener('click', function() {
+            navigator.clipboard.writeText('(123) 456-7890')
+            .then(() => alert('Phone number copied!'));
+        });
+    </script>
+</body>
+</html>
